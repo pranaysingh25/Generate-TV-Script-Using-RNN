@@ -7,9 +7,7 @@ SPECIAL_WORDS = {'PADDING': '<PAD>'}
 
 
 def load_data(path):
-    """
-    Load Dataset from File
-    """
+    #Load Dataset from File
     input_file = os.path.join(path)
     with open(input_file, "r") as f:
         data = f.read()
@@ -18,9 +16,8 @@ def load_data(path):
 
 
 def preprocess_and_save_data(dataset_path, token_lookup, create_lookup_tables):
-    """
-    Preprocess Text Data
-    """
+ 
+    #Preprocess Text Data
     text = load_data(dataset_path)
     
     # Ignore notice, since we don't use it for analysing the data
@@ -39,9 +36,9 @@ def preprocess_and_save_data(dataset_path, token_lookup, create_lookup_tables):
 
 
 def load_preprocess():
-    """
-    Load the Preprocessed Training data and return them in batches of <batch_size> or less
-    """
+ 
+    #Load the Preprocessed Training data and return them in batches of <batch_size> or less
+   
     return pickle.load(open('preprocess.p', mode='rb'))
 
 
